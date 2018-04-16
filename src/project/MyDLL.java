@@ -40,8 +40,8 @@ public class MyDLL<E extends Comparable<E>> {
 
     // Unlinks node and returns the next node in the list
     private DLLNode<E> unlinkNode(DLLNode<E> node) {
-	DLLNode<E> next = node.getNext();
 	DLLNode<E> prev = node.getPrev();
+	DLLNode<E> next = node.getNext();
 	// Check tail
 	if (next == null) {
 	    tail = prev;
@@ -118,15 +118,16 @@ public class MyDLL<E extends Comparable<E>> {
 
     // Reverse the nodes in the linked list.
     public void reverse() {
-	DLLNode<E> currentNode = tail;
+	DLLNode<E> current = head;
+	DLLNode<E> temp = null;
 	tail = head;
-	head = currentNode;
-	while (currentNode != null) {
-	    currentNode.setNext(currentNode.getPrev());
-	    currentNode.setPrev(currentNode.getNext());
-	    currentNode = currentNode.getNext();
+	while (current != null) {
+	    temp = current.getPrev();
+	    current.setPrev(current.getNext());
+	    current.setNext(temp);
+	    current = current.getPrev();
 	}
-	System.out.println(tail.getValue());
+	head = temp == null ? null : temp.getPrev();
     }
 
     // Removes all duplicate nodes in the linked list
@@ -187,7 +188,7 @@ public class MyDLL<E extends Comparable<E>> {
 	    addNode(value);
 	} else {
 	    int middle = (int) Math.floor(size / 2);
-	    middle = middle % 2 == 0 ? ++middle : middle;
+	    middle = size % 2 == 0 ? middle : --middle;
 	    DLLNode<E> prev = head;
 	    for (int i = 1; i < middle; i++) {
 		prev = prev.getNext();
@@ -204,17 +205,17 @@ public class MyDLL<E extends Comparable<E>> {
     public void printList() {
 	if (size != 0) {
 	    for (DLLNode<E> node = head; node != null; node = node.getNext()) {
-//		System.out.println(node.getValue().toString());
 		System.out.print(node.getValue().toString());
 		if (node == head) {
 		    System.out.print(" <- head");
-		} else if (node == tail) {
+		}
+		if (node == tail) {
 		    System.out.print(" <- tail");
 		}
-		System.out.println("");
+		System.out.println();
 	    }
 	} else {
-	    System.out.println("List contains no elements or is null.");
+	    System.out.print("List contains no elements or is null.");
 	}
 	System.out.println("");
     }

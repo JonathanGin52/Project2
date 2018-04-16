@@ -6,6 +6,10 @@ public class DLLNode<E extends Comparable<E>> implements Comparable<E> {
     private DLLNode<E> prev;
     private DLLNode<E> next;
 
+    public DLLNode(E value) {
+	this(value, null, null);
+    }
+
     public DLLNode(E value, DLLNode<E> prev, DLLNode<E> next) {
 	this.value = value;
 	this.prev = prev;

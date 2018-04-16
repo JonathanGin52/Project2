@@ -9,27 +9,26 @@ import java.util.LinkedList;
 public class Recursion {
 
     public static void main(String[] args) {
-	MyDLL<Integer> dll = new MyDLL<>();
-	dll.addNode(0);
-	dll.addNode(2);
-	dll.addNode(5);
-	dll.addNode(4);
-	dll.addNode(7);
-	dll.addNode(1);
-	dll.addNode(3);
-	dll.addNode(6);
-	dll.deleteNode(0);
+	MyDLL<String> dll = new MyDLL<>();
+//	dll.addNode("0");
+//	dll.addNode("1");
+//	dll.addNode("2");
+//	dll.addNode("3");
+//	dll.addNode("4");
+//	dll.addNode("5");
+//	dll.addNode("6");
+	dll.middleAdd("0");
+	dll.middleAdd("1");
+	dll.middleAdd("2");
+	dll.middleAdd("3");
+//	dll.middleAdd("4");
+//	dll.middleAdd("5");
+//	dll.middleAdd("6");
+//	dll.middleAdd("7");
+//	dll.betterSort();
 
-	dll.betterSort();
+//	dll.betterSort();
 	MyDLL<Integer> list = new MyDLL<>();
-	list.addNode(-1);
-	list.addNode(-1);
-	list.addNode(-1);
-	list.addNode(-1);
-	list.addNode(-1);
-	list.addNode(-1);
-	list.addNode(-1);
-	list.addNode(-1);
 	list.addNode(-1);
 	list.addNode(-1);
 	list.addNode(-1);
@@ -37,8 +36,7 @@ public class Recursion {
 
 //	dll.alternate(list);
 //	dll.duplicate();
-	dll.reverse();
-	dll.reverse();
+//	dll.reverse();
 	dll.printList();
 
 	/*
