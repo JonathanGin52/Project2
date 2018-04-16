@@ -21,22 +21,26 @@ public class Recursion {
 	dll.middleAdd("1");
 	dll.middleAdd("2");
 	dll.middleAdd("3");
-//	dll.middleAdd("4");
-//	dll.middleAdd("5");
-//	dll.middleAdd("6");
-//	dll.middleAdd("7");
-//	dll.betterSort();
+	dll.middleAdd("4");
+	dll.middleAdd("5");
+	dll.middleAdd("6");
+	dll.middleAdd("7");
+	dll.betterSort();
 
-//	dll.betterSort();
-	MyDLL<Integer> list = new MyDLL<>();
-	list.addNode(-1);
-	list.addNode(-1);
-	list.addNode(-1);
-	list.addNode(-1);
+	MyDLL<String> list = new MyDLL<>();
+	list.addNode("!");
+	list.addNode("!");
+	list.addNode("!");
+	list.addNode("!");
+	list.addNode("!");
+	list.addNode("!");
+	list.addNode("!");
+	list.addNode("!");
 
-//	dll.alternate(list);
+	dll.alternate(list);
 //	dll.duplicate();
-//	dll.reverse();
+	dll.reverse();
+	dll.reverse();
 	dll.printList();
 
 	/*

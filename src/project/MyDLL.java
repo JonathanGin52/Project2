@@ -67,7 +67,7 @@ public class MyDLL<E extends Comparable<E>> {
 
     }
 
-    // Maps values to a list, sorts array using quicksort, then re-maps sorted list back to DLL
+    // Maps values to a list, sorts list using quicksort, then re-maps sorted list back to DLL
     public void betterSort() {
 	List<E> list = new ArrayList(size);
 	for (DLLNode<E> node = head; node != null; node = node.getNext()) {
@@ -157,10 +157,9 @@ public class MyDLL<E extends Comparable<E>> {
 	    if (temp1 != null) {
 		temp1.setPrev(node2);
 		node2.setNext(temp1);
+		node2 = temp2;
 	    }
-
 	    node1 = temp1;
-	    node2 = temp2;
 	}
 	if (node1 == null) {
 	    this.tail.setNext(node2);
@@ -184,11 +183,10 @@ public class MyDLL<E extends Comparable<E>> {
 
     // Places the new node in the middle of the list
     public void middleAdd(E value) {
-	if (size <= 1) { // Checks if list is empty or only contains 1 element
+	if (size <= 1) { // Checks if list is empty or only contains 1 element (can append to end of list)
 	    addNode(value);
 	} else {
-	    int middle = (int) Math.floor(size / 2);
-	    middle = size % 2 == 0 ? middle : --middle;
+	    int middle = (int) Math.ceil(size / 2d);
 	    DLLNode<E> prev = head;
 	    for (int i = 1; i < middle; i++) {
 		prev = prev.getNext();
@@ -217,6 +215,6 @@ public class MyDLL<E extends Comparable<E>> {
 	} else {
 	    System.out.print("List contains no elements or is null.");
 	}
-	System.out.println("");
+	System.out.println("Size: " + size);
     }
 }
