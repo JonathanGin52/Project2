@@ -25,7 +25,7 @@ public class Recursion {
 	dll.middleAdd("5");
 	dll.middleAdd("6");
 	dll.middleAdd("7");
-	dll.betterSort();
+	dll.sort();
 
 	MyDLL<String> list = new MyDLL<>();
 	list.addNode("!");

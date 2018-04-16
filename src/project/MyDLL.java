@@ -61,14 +61,8 @@ public class MyDLL<E extends Comparable<E>> {
 	return next;
     }
 
-    // Sorts using insertion sort
-    // Does this have to be in-place?
-    public void sort() {
-
-    }
-
     // Maps values to a list, sorts list using quicksort, then re-maps sorted list back to DLL
-    public void betterSort() {
+    public void sort() {
 	List<E> list = new ArrayList(size);
 	for (DLLNode<E> node = head; node != null; node = node.getNext()) {
 	    list.add(node.getValue());
