@@ -57,7 +57,6 @@ public class MyDLL<E extends Comparable<E>> {
 	    node.setPrev(null);
 	}
 	size--;
-	System.out.println(next.getValue());
 	return next;
     }
 

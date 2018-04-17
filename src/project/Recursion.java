@@ -84,7 +84,7 @@ public class Recursion {
 	if (!isNull(list)) {
 	    list.forEach(System.out::println);
 	} else {
-	    System.out.println("List contains no elements or is null.");
+	    System.out.print("List contains no elements or is null.");
 	}
 	System.out.println("");
     }
