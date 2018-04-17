@@ -73,6 +73,7 @@ public class MyDLL<E extends Comparable<E>> {
 	}
     }
 
+    // Sorts list using single pivot quicksort
     private void quickSort(List<E> list, int left, int right) {
 	if (left < right) {
 	    int pivot = partition(list, left, right);
@@ -114,7 +115,7 @@ public class MyDLL<E extends Comparable<E>> {
 	DLLNode<E> current = head;
 	DLLNode<E> temp = null;
 	tail = head;
-	while (current != null) {
+	while (current != null) { // Traverse list and swap prev and next pointers
 	    temp = current.getPrev();
 	    current.setPrev(current.getNext());
 	    current.setNext(temp);
@@ -128,7 +129,11 @@ public class MyDLL<E extends Comparable<E>> {
 	List<E> repeats = new ArrayList<>();
 	for (DLLNode<E> node = head; node != null; node = node.getNext()) {
 	    if (repeats.contains(node.getValue())) {
-		node = unlinkNode(node).getPrev();
+		if (node == tail) { // Do not get next node if node is tail
+		    unlinkNode(node);
+		} else {
+		    node = unlinkNode(node).getPrev();
+		}
 	    } else {
 		repeats.add(node.getValue());
 	    }
@@ -154,7 +159,7 @@ public class MyDLL<E extends Comparable<E>> {
 	    }
 	    node1 = temp1;
 	}
-	if (node1 == null) {
+	if (node1 == null) { // Chcek if list2 still has elements. If true, append to end of list1, and set tail of list2 as tail
 	    this.tail.setNext(node2);
 	    this.tail = list.tail;
 	}
@@ -179,9 +184,9 @@ public class MyDLL<E extends Comparable<E>> {
 	if (size <= 1) { // Checks if list is empty or only contains 1 element (can append to end of list)
 	    addNode(value);
 	} else {
-	    int middle = (int) Math.ceil(size / 2d);
+	    int middle = (int) Math.ceil(size / 2d); // Finds middle of list. Rounds up if size is odd.
 	    DLLNode<E> prev = head;
-	    for (int i = 1; i < middle; i++) {
+	    for (int i = 1; i < middle; i++) { // Traverse linkedlist until middle element	
 		prev = prev.getNext();
 	    }
 	    DLLNode<E> next = prev.getNext();
