@@ -2,10 +2,6 @@ package project;
 
 import java.util.LinkedList;
 
-/**
- *
- * @author Jonathan Gin and Justin Tran
- */
 public class Recursion {
 
     public static void main(String[] args) {
@@ -38,9 +34,8 @@ public class Recursion {
 	list.addNode("!");
 
 	dll.alternate(list);
-//	dll.duplicate();
-	dll.reverse();
-	dll.reverse();
+	dll.duplicate();
+//	dll.reverse();
 	dll.printList();
 
 	/*
