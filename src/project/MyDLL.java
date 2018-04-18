@@ -142,6 +142,12 @@ public class MyDLL<E extends Comparable<E>> {
 
     // Merges the contents of list and this class in alternating order class = 1 2 3, list = 4 4 4  alternate = 1 4 2 4 3 4
     public void alternate(MyDLL<E> list) {
+	if (size == 0) { // Check if dll is empty
+	    this.head = list.head;
+	    this.tail = list.tail;
+	    size = list.size;
+	    return;
+	}
 	DLLNode<E> temp1;
 	DLLNode<E> temp2;
 	DLLNode<E> node1 = this.head;
@@ -210,9 +216,9 @@ public class MyDLL<E extends Comparable<E>> {
 		}
 		System.out.println();
 	    }
+	    System.out.println("Size: " + size);
 	} else {
-	    System.out.print("List contains no elements or is null.");
+	    System.out.println("List contains no elements or is null.");
 	}
-	System.out.println("Size: " + size);
     }
 }

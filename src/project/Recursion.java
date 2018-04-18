@@ -13,28 +13,24 @@ public class Recursion {
 //	dll.addNode("4");
 //	dll.addNode("5");
 //	dll.addNode("6");
-	dll.middleAdd("0");
-	dll.middleAdd("1");
-	dll.middleAdd("2");
-	dll.middleAdd("3");
-	dll.middleAdd("4");
-	dll.middleAdd("5");
-	dll.middleAdd("6");
-	dll.middleAdd("7");
-	dll.sort();
+//	dll.middleAdd("0");
+//	dll.middleAdd("1");
+//	dll.middleAdd("2");
+//	dll.middleAdd("3");
+//	dll.middleAdd("4");
+//	dll.middleAdd("5");
+//	dll.middleAdd("6");
+//	dll.middleAdd("7");
+//	dll.sort();
 
 	MyDLL<String> list = new MyDLL<>();
-	list.addNode("!");
-	list.addNode("!");
-	list.addNode("!");
-	list.addNode("!");
-	list.addNode("!");
-	list.addNode("!");
-	list.addNode("!");
-	list.addNode("!");
-
+	list.addNode("a");
+	list.addNode("b");
+	list.addNode("c");
+	list.addNode("d");
+	list.addNode("e");
 	dll.alternate(list);
-	dll.duplicate();
+//	dll.duplicate();
 //	dll.reverse();
 	dll.printList();
 
