@@ -165,7 +165,7 @@ public class MyDLL<E extends Comparable<E>> {
 	    }
 	    node1 = temp1;
 	}
-	if (node1 == null) { // Chcek if list2 still has elements. If true, append to end of list1, and set tail of list2 as tail
+	if (node1 == null) { // Check if list2 still has elements. If true, append to end of list1, and set tail of list2 as tail
 	    this.tail.setNext(node2);
 	    this.tail = list.tail;
 	}
@@ -220,5 +220,6 @@ public class MyDLL<E extends Comparable<E>> {
 	} else {
 	    System.out.println("List contains no elements or is null.");
 	}
+        System.out.println();
     }
 }
