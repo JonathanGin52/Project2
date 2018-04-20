@@ -66,7 +66,7 @@ public class MyDLL<E extends Comparable<E>> {
 	for (DLLNode<E> node = head; node != null; node = node.getNext()) {
 	    list.add(node.getValue());
 	}
-	quickSort(list, 0, size - 1);
+	quickSort(list, 0, size - 1); // Sort list using quicksort (implementation below)
 	int i = 0;
 	for (DLLNode<E> node = head; node != null; node = node.getNext()) {
 	    node.setValue(list.get(i++));
@@ -190,7 +190,7 @@ public class MyDLL<E extends Comparable<E>> {
 	if (size <= 1) { // Checks if list is empty or only contains 1 element (can append to end of list)
 	    addNode(value);
 	} else {
-	    int middle = (int) Math.ceil(size / 2d); // Finds middle of list. Rounds up if size is odd.
+	    int middle = (int) Math.ceil(size / 2d); // Finds middle of list. Rounds up if size is odd. Use Math.floor to round down.
 	    DLLNode<E> prev = head;
 	    for (int i = 1; i < middle; i++) { // Traverse linkedlist until middle element	
 		prev = prev.getNext();
@@ -212,6 +212,6 @@ public class MyDLL<E extends Comparable<E>> {
 	} else {
 	    System.out.println("List contains no elements or is null.");
 	}
-        System.out.println();
+	System.out.println();
     }
 }
