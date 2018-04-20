@@ -5,7 +5,7 @@ import java.util.LinkedList;
 public class Recursion {
 
     public static void main(String[] args) {
-	//Singly LinkedLists
+	// Singly LinkedList Test Cases
 	LinkedList<String> list1 = new LinkedList();
 	list1.add("a");
 	list1.add("b");
@@ -179,6 +179,27 @@ public class Recursion {
 	dll.printList();
 	dll5.middleAdd("<3>");
 	dll5.printList();
+
+	System.out.println("\n\n");
+	System.out.println("\nTesting reverse():");
+	printList(reverse(add("Tic", add("Tac", add("Toe", null)))));
+
+	System.out.println("\nTesting difference():");
+	printList(difference(add("2", add("4", add("6", add("8", add("10", null))))), add("1", add("2", add("3", add("4", add("5", null)))))));
+
+	System.out.println("\nTesting union():");
+	printList(union(add("2", add("4", add("6", add("8", add("10", null))))), add("1", add("2", add("3", add("4", add("5", null)))))));
+
+	System.out.println("\nTesting intersect():");
+	printList(intersect(add("2", add("4", add("6", add("8", add("10", null))))), add("1", add("2", add("3", add("4", add("5", null)))))));
+
+	System.out.println("\nTesting subset():");
+	System.out.println(subset(add("1", add("2", add("3", null))), add("1", add("2", add("3", add("4", add("5", null)))))));
+	System.out.println(subset(add("1", add("2", add("6", null))), add("1", add("2", add("3", add("4", add("5", null)))))));
+
+	System.out.println("\nTesting equalSets():");
+	System.out.println(equalSets(add("1", add("2", add("3", add("5", add("4", null))))), add("3", add("2", add("1", add("4", add("5", null)))))));
+	System.out.println(equalSets(add("1", add("2", add("6", null))), add("1", add("2", add("3", add("4", add("5", null)))))));
     }
 
     // Add value to the front of list. If list is null, create a new LinkedList.
@@ -254,8 +275,8 @@ public class Recursion {
 
     // Returns a list of the difference between list1 and list2
     private static LinkedList difference(LinkedList list1, LinkedList list2) {
-	if (isNull(list1) || isNull(list2)) { // If either list is null, return other list
-	    return isNull(list1) ? list2 : list1;
+	if (isNull(list1)) {
+	    return null;
 	} else if (isMember(first(list1), list2)) {
 	    return difference(rest(list1), deleteFirst(first(list1), list2));
 	}
