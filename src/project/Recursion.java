@@ -5,7 +5,7 @@ import java.util.LinkedList;
 public class Recursion {
 
     public static void main(String[] args) {
-	MyDLL<String> dll = new MyDLL<>();
+//	MyDLL<String> dll = new MyDLL<>();
 //	dll.addNode("0");
 //	dll.addNode("1");
 //	dll.addNode("2");
@@ -13,39 +13,20 @@ public class Recursion {
 //	dll.addNode("4");
 //	dll.addNode("5");
 //	dll.addNode("6");
-//	dll.middleAdd("0");
-//	dll.middleAdd("1");
-//	dll.middleAdd("2");
-//	dll.middleAdd("3");
-//	dll.middleAdd("4");
-//	dll.middleAdd("5");
-//	dll.middleAdd("6");
-//	dll.middleAdd("7");
-//	dll.sort();
+//	dll.printList();
 
-	MyDLL<String> list = new MyDLL<>();
-	list.addNode("a");
-	list.addNode("b");
-	list.addNode("c");
-	list.addNode("d");
-	list.addNode("e");
-	dll.alternate(list);
-//	dll.duplicate();
-//	dll.reverse();
-	dll.printList();
-
-	/*
 	LinkedList<String> list1 = new LinkedList<>();
 	LinkedList<String> list2 = new LinkedList<>();
-	list1 = append(list1, add("1", add("2", add("3", add("4", add("5", null))))));
-	list2 = append(list2, add("3", add("4", add("5", add("6", add("7", null))))));
-	list1 = append(list1, list2);
-	printList(intersect(list1, list2));*/
+	list1 = append(list1, add("6", add("5", add("3", add("4", add("5", null))))));
+	list2 = append(list2, add("6", add("5", add("6", add("1", add("3", null))))));
+	System.out.println(intersect(list1, list2));
+//	list1 = append(list1, list2);
+//	printList(intersect(list1, list2));
     }
 
     // Add value to the front of list. If list is null, create a new LinkedList.
     private static LinkedList add(String value, LinkedList list) {
-	if (list == null) {
+	if (list == null) { // If list is null, create a new linkedlist
 	    list = new LinkedList<>();
 	}
 	list.addFirst(value);
@@ -116,7 +97,7 @@ public class Recursion {
 
     // Returns a list of the difference between list1 and list2
     private static LinkedList difference(LinkedList list1, LinkedList list2) {
-	if (isNull(list1) || isNull(list2)) {
+	if (isNull(list1) || isNull(list2)) { // If either list is null, return other list
 	    return isNull(list1) ? list2 : list1;
 	} else if (isMember(first(list1), list2)) {
 	    return difference(rest(list1), deleteFirst(first(list1), list2));
@@ -134,7 +115,7 @@ public class Recursion {
 
     // Returns a list of the intersection between list1 and list2.
     private static LinkedList intersect(LinkedList list1, LinkedList list2) {
-	if (isNull(list1) || isNull(list2)) {
+	if (isNull(list1) || isNull(list2)) { // If either list is null, return null
 	    return null;
 	} else if (isMember(first(list1), list2)) {
 	    return append(add(first(list1), null), intersect(rest(list1), list2));
